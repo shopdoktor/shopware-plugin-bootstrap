@@ -1,0 +1,24 @@
+{
+  "label": {
+    "de": "Ein Plugin",
+    "en": "A plugin"
+  },
+  "description": {
+    "de": "Eine kurze Beschreibung.",
+    "en": "A short description."
+  },
+  "copyright": "(c) Sebastian Lenz",
+  "license": "proprietary",
+  "link": "https://www.shopdoktor.com/",
+  "author": "Sebastian Lenz",
+
+  "currentVersion": "1.0.0",
+  "currentRevision": "1",
+
+  "compatibility": {
+    "minimumVersion": "",
+    "maximumVersion": "",
+    "blacklist": [
+    ]
+  }
+}
