@@ -22,7 +22,7 @@ class Shopware_Plugins_Core_LenzPluginCode_Bootstrap extends Shopware_Components
 	public function getLabel() {
 		$info = json_decode(file_get_contents(__DIR__ . DIRECTORY_SEPARATOR .'plugin.json'), true);
 		if ($info) {
-			return $info['label']['de'];
+			return $info['label']['de'];// Return the label in german language.
 		} else {
 			throw new Exception('The plugin has an invalid label file.');
 		}
@@ -35,6 +35,7 @@ class Shopware_Plugins_Core_LenzPluginCode_Bootstrap extends Shopware_Components
 	public function getVersion() {
 		$info = json_decode(file_get_contents(__DIR__ . DIRECTORY_SEPARATOR .'plugin.json'), true);
 		if ($info) {
+			// Return current plugin version.
 			return $info['currentVersion'];
 		} else {
 			throw new Exception('The plugin has an invalid version file.');
@@ -49,13 +50,13 @@ class Shopware_Plugins_Core_LenzPluginCode_Bootstrap extends Shopware_Components
 		$info = json_decode(file_get_contents(__DIR__ . DIRECTORY_SEPARATOR .'plugin.json'), true);
 		if ($info) {
 			return array(
-				'version' => $info['currentVersion'],
-				'copyright' => $info['copyright'],// Copyright-Hinweis
-				'label' => $info['label']['de'],
-				'description' => $info['description']['de'],// Info-Text, der in den Plugin-Details angezeigt wird
-				'link' => $info['link'],
-				'author' => $info['author'],
-				'revision' => $info['currentRevision']// Aktuelle Revision des Plugins
+				'version' => $info['currentVersion'],// Current version.
+				'copyright' => $info['copyright'],// Copyright notice.
+				'label' => $info['label']['de'],// Plugin name.
+				'description' => $info['description']['de'],// Plugin description.
+				'link' => $info['link'],// Plugin URL.
+				'author' => $info['author'],// Author's name.
+				'revision' => $info['currentRevision']// Current revision. Increase by 1 every release.
 			);
 		} else {
 			throw new Exception('The plugin has an invalid version file.');
